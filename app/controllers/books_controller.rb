@@ -4,9 +4,10 @@ class BooksController < ApplicationController
   end
 
   def show
+    @book = Book.find_by(id: params[:id])
   end
 
-   def new
+  def new
     @book = Book.new
   end
 
@@ -37,6 +38,10 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    @book = Book.find(params[:id])
+    @book.delete
+    redirect_to books_path
+    flash[:danger] = "OH WHY?!"
   end
   
   private
