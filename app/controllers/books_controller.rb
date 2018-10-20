@@ -21,10 +21,19 @@ class BooksController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @book = Book.find_by(id: params[:id])
   end
 
-  def edit
+  def update
+    @book = Book.find_by(id: params[:id])
+    if @book.update_attributes(book_params)
+      redirect_to books_path
+      flash[:notice] = "The edit was success."
+    else
+      flash[:notice] = "The edit was not really successful."
+      render edit
+    end
   end
 
   def destroy
