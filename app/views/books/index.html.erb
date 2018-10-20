@@ -10,15 +10,11 @@
   </thead>
   
   <tbody>
-   
     <% @books.each do |book|%>
-     
     <tr>
-      
       <th scope="row"><%=link_to book.id, book_path(book.id)%></th>
       <td><%= book.title%></td>
       <td> <%= book.description%></td>
-     
     </tr>
      <%end%>
   </tbody>
