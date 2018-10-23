@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
-  get 'books/index'
-  get 'books/show'
-  get 'books/new'
-  get 'books/create'
-  get 'books/update'
-  get 'books/edit'
-  get 'books/destroy'
+  resources :books
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'picture', to: 'books#random_photo'
+ 
 end
