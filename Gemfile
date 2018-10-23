@@ -34,6 +34,10 @@ gem 'openlibrary'
 
 #faker gem
 gem 'faker'
+#unsplash API
+gem 'unsplash'
+
+gem 'faraday'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
