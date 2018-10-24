@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Library</title>
+    <title>LibraryRails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    <%= yield %>
+    
+     <div class="header">
+      <a href="#default" class="logo">Book Collection</a>
+      <div class="header-right">
+        <!--<a class="active" href="#home">Home</a> -->
+        <%= link_to "Home", '/', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
+        <%= link_to "Login", '#', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
+        <%= link_to "Sign_up", '#', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
+      </div>
+    </div>
+    <div class="container">
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+            <div class = "flash"> <%= value %> </div> 
+      </div>
+    <% end %>
+    </div>
+    <div class="container-fluid">
+      
+        <%= yield %>
+     
+    </div>
   </body>
 </html>
