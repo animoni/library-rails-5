@@ -1,8 +1,8 @@
 
-<%= link_to "Random", method: :random_photo %>
 
+<%= link_to "Random", random_photo %>
 
-<br></br>
-<%= image_tag(random_photo)%>
-<br></br>
-<%= image_tag(search_photo("building"))%>
+<%#=link_to "Random", controller: "books", action: "random_photo"%>
+
+<a href= "<%=random_photo%>" target="_self"> Random </a>
+
