@@ -33,7 +33,7 @@ class BooksController < ApplicationController
       flash[:notice] = "The edit was success."
     else
       flash[:notice] = "The edit was not really successful."
-      render edit
+      render 'edit'
     end
   end
 
