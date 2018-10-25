@@ -20,13 +20,13 @@
         <%= link_to "Sign_up", '#', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
       </div>
     </div>
-    <div class="container">
-    <% flash.each do |key, value| %>
-      <div class="<%= flash_class(key) %>">
-            <div class = "flash"> <%= value %> </div> 
-      </div>
-    <% end %>
-    </div>
+    <!--<div class="container">-->
+    <!--<%# flash.each do |key, value| %>-->
+    <!--  <div class="<%#= flash_class(key) %>">-->
+    <!--        <div class = "flash"> <%#= value %> </div> -->
+    <!--  </div>-->
+    <!--<%# end %>-->
+    <!--</div>-->
     <div class="container-fluid">
       
         <%= yield %>
