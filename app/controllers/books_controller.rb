@@ -24,11 +24,10 @@ class BooksController < ApplicationController
   def random_photo
     pic = Unsplash::Photo.random(query: "cat",count: 1)
     #binding.pry
-    picture = [].join 
+    @picture = [].join 
       pic.each do |a|
-      picture << a.urls.small
+      @picture << a.urls.small
     end
-    picture
-    render 'index'
+    @picture
   end
 end
