@@ -29,7 +29,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find_by(id: params[:id])
     if @book.update_attributes(book_params)
-      redirect_to books_path
+      redirect_to book_path(@book)
       flash[:notice] = "The edit was success."
     else
       flash[:notice] = "The edit was not really successful."
