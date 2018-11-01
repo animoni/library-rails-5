@@ -1,0 +1,12 @@
+<%= form_for :search_params, url: search_books_path, method: :get do |f| %>
+      Search <%= f.text_field :search_word %>
+    <%= f.submit 'Search' %>
+  <% end %>
+<br></br>
+
+<%#= image_tag(@pic)%>
+<%@pic.split.each do |pic|%>
+  <br>
+    <%= image_tag(pic)%>
+  </br>
+<%end%>
