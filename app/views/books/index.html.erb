@@ -1,8 +1,15 @@
-
-
-<%= link_to "Random", random_photo %>
-
 <%#=link_to "Random", controller: "books", action: "random_photo"%>
+<!--<a href= "<%#=random_photo%>" target="_self"> Random </a>-->
+<%#= link_to "Random", picture_path %>
+<%#= image_tag(@pic)%>
 
-<a href= "<%=random_photo%>" target="_self"> Random </a>
+<!--Working-->
+<!--<%#=link_to image_tag(@pic), 'https://www.google.com', target: "_blank"%>-->
+<!--<%#= button_to "Picture", action: :index%>-->
+<!--<%#= image_tag(@pic)%>-->
+<!--<%#=link_to "Something", books_path, :method => :index%>-->
 
+<%= form_for :search_params, url: search_books_path, method: :get do |f| %>
+      Search <%= f.text_field :search_word %>
+    <%= f.submit 'Search' %>
+  <% end %>
