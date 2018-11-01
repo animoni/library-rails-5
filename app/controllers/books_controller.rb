@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
  
   def index
+   #@pic = Book.random_photo
   end
 
   def show
@@ -9,7 +10,8 @@ class BooksController < ApplicationController
   def new
   end
 
-  def create
+  def create 
+    #redirect_to books_path
   end
 
   def update
@@ -21,13 +23,19 @@ class BooksController < ApplicationController
   def destroy
   end
   
-  def random_photo
-    pic = Unsplash::Photo.random(query: "cat",count: 1)
-    #binding.pry
-    @picture = [].join 
-      pic.each do |a|
-      @picture << a.urls.small
+  def search
+   # binding.pry
+    if search_params[:search_word].blank?
+      @pic = Picture.random_photo
+    else
+      @pic = Picture.search_photo(search_params)
     end
-    @picture
   end
+  
+  private
+  
+  def search_params
+    params.require(:search_params).permit(:search_word)
+  end
+ 
 end
