@@ -8,16 +8,18 @@ class Picture < ApplicationRecord
       pic.each do |a|
       @picture << a.urls.small
     end
-    @picture.join(" ")
+    @picture
   end  
   
   def self.search_photo(name)
-   # binding.pry
-    pic = Unsplash::Photo.search("#{name}")
+    # binding.pry
+    pic = Unsplash::Photo.search(name['search_word'], 2, 10)
+    # binding.pry
     @picture = []
-      pic.each do |a|
-      @picture << a.urls.small
+    pic.each do |p|
+      @picture << p.urls.small
     end
-    @picture.join 
+    @picture
+   
   end
 end
