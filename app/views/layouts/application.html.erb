@@ -20,6 +20,7 @@
         <%= link_to "Sign_up", '#', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
       </div>
     </div>
+    
     <!--<div class="container">-->
     <!--<%# flash.each do |key, value| %>-->
     <!--  <div class="<%#= flash_class(key) %>">-->
@@ -27,10 +28,64 @@
     <!--  </div>-->
     <!--<%# end %>-->
     <!--</div>-->
-    <div class="container-fluid">
-      
-        <%= yield %>
-     
+
+    
+    
+<div class="wrapper">
+ <div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-lg-4">
+          
+      <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3>Menu</h3>
+      </div>
+        <ul class="list-unstyled components">
+          <!--<p>Dummy Heading</p>-->
+          <li class="active">
+            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Book</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                <%= link_to "List", '#' %>
+              </li>
+              <li>
+                <%= link_to "Add", '#' %>
+              </li>
+              <li>
+                <%= link_to "Show", '#' %>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Categories</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>
+                  <%= link_to "Science", '#' %>
+              </li>
+              <li>
+                  <%= link_to "Classic", '#' %>
+              </li>
+              <li>
+                  <%= link_to "Fiction", '#' %>
+              </li>
+            </ul>
+          </li>
+             <li>
+              <%= link_to "About", '#' %>
+          </li>
+          <li>
+              <%= link_to "Contact", '#' %>
+          </li>
+        </ul>
+      </nav>
     </div>
+
+    <div class = "col-lg-8">
+      <%= yield %>
+    </div>
+  </div>
+</div> 
+    
+    
   </body>
 </html>
