@@ -13,11 +13,11 @@ class Picture < ApplicationRecord
   
   def self.search_photo(name)
     # binding.pry
-    pic = Unsplash::Photo.search(name['search_word'], 2, 10)
+    pic = Unsplash::Photo.search(name['search_word'], 1, 10)
     # binding.pry
     @picture = []
     pic.each do |p|
-      @picture << p.urls.small
+      @picture << p.urls.thumb
     end
     @picture
    
