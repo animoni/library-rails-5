@@ -4,9 +4,8 @@
   <% end %>
 <br></br>
 
-<%#= image_tag(@pic)%>
-<%@pic.split.each do |pic|%>
-  <br>
-    <%= image_tag(pic)%>
-  </br>
+
+<%@pic.each do |p|%>
+  <%=image_tag(p)%>
 <%end%>
+
