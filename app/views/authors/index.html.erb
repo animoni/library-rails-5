@@ -1,2 +1,21 @@
-<h1>Authors#index</h1>
-<p>Find me in app/views/authors/index.html.erb</p>
+<table class="table">
+  
+  <thead>
+    <tr>
+      <th><%="Id"%></th>
+      <th><%="Name"%></th>
+      <th><%="Delete"%></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <%@authors.each do |author|%>
+     
+      <tr>
+       <td><%=author.id%></td>
+       <td><%=author.full_name_index(author.first_name,author.last_name)%></td>
+       <td><%= link_to "Delete", author_path(author.id), method: :delete%><td>
+      </tr>
+      <%end%>
+  </tbody>
+</table>

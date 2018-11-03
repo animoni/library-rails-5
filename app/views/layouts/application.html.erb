@@ -11,24 +11,17 @@
 
   <body>
     
-     <div class="header">
-      <a href="#default" class="logo">Book Collection</a>
-      <div class="header-right">
-        <!--<a class="active" href="#home">Home</a> -->
-        <%= link_to "Home", '/', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
-        <%= link_to "Login", '#', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
-        <%= link_to "Sign_up", '#', :class => "btn", :form_class => "form-inline form-horizontal", :class => "button" %>
+    <%= render 'shared/header' %>
+    
+    <div class="container">
+    <% flash.each do |key, value| %>
+      <div class="<%= flash_class(key) %>">
+            <div class = "flash"> <%= value %> </div> 
       </div>
+    <% end %>
     </div>
     
-    <!--<div class="container">-->
-    <!--<%# flash.each do |key, value| %>-->
-    <!--  <div class="<%#= flash_class(key) %>">-->
-    <!--        <div class = "flash"> <%#= value %> </div> -->
-    <!--  </div>-->
-    <!--<%# end %>-->
-    <!--</div>-->
-
+  
     
     
 <div class="wrapper">
@@ -78,7 +71,7 @@
           </li>
         </ul>
       </nav>
-    </div>
+   
 
     <div class = "col-lg-8">
       <%= yield %>
