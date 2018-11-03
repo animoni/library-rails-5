@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first_author:
+  first_name: Mor
+  last_name: Jokai
+
+second_author:
+  first_name: Geza
+  last_name: Gardonyi
