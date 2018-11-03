@@ -1,0 +1,14 @@
+
+
+<div class="card border-success mb-3" style="max-width: 18rem;">
+  <div class="card-header bg-transparent border-success"><%= @book.title%></div>
+  <div class="card-body text-success">
+  
+    <p class="card-text"><%= @book.description%></p>
+  </div>
+  <div class="card-footer bg-transparent border-success">
+    <%=link_to "Edit", edit_book_path(@book.id)%>
+    <%=link_to "Delete", book_path(@book.id), method: :delete%>
+  </div>
+</div>
+

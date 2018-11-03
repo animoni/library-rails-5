@@ -1,3 +1,27 @@
+
+
+<table class="table table-striped">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @books.each do |book|%>
+    <tr>
+      <th scope="row"><%=link_to book.id, book_path(book.id)%></th>
+      <td><%= book.title%></td>
+      <td> <%= book.description%></td>
+    </tr>
+     <%end%>
+  </tbody>
+</table>
+
+<%=link_to "New entry", new_book_path%>
+
 <%#=link_to "Random", controller: "books", action: "random_photo"%>
 <!--<a href= "<%#=random_photo%>" target="_self"> Random </a>-->
 <%#= link_to "Random", picture_path %>
