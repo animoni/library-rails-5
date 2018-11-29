@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_19_152525) do
+ActiveRecord::Schema.define(version: 2018_11_05_135808) do
 
   create_table "authors", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "book_pictures", force: :cascade do |t|
+    t.integer "book_id"
+    t.string "picureone"
+    t.string "picturetwo"
+    t.string "picturethree"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_book_pictures_on_book_id"
   end
 
   create_table "books", force: :cascade do |t|
