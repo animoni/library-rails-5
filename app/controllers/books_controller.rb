@@ -45,12 +45,6 @@ class BooksController < ApplicationController
     flash[:danger] = "OH WHY?!"
   end
   
-  private
-  
-  def book_params
-    params.require(:book).permit(:title, :description)
-  end
-  
   def search
    # binding.pry
     if search_params[:search_word].blank?
@@ -60,10 +54,24 @@ class BooksController < ApplicationController
     end
   end
   
+  # def picture
+  #   @bookpicture = BookPicture.new(pic_parmas)
+    
+    
+  # end
+  
   private
+  
+  def book_params
+    params.require(:book).permit(:title, :description)
+  end
   
   def search_params
     params.require(:search_params).permit(:search_word)
   end
+  
+  # def pic_parmas
+  #   params.require(:picture).permit(:chosen_picture)
+  # end
  
 end
