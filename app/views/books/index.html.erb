@@ -33,7 +33,3 @@
 <!--<%#= image_tag(@pic)%>-->
 <!--<%#=link_to "Something", books_path, :method => :index%>-->
 
-<%= form_for :search_params, url: search_books_path, method: :get do |f| %>
-      Search <%= f.text_field :search_word %>
-    <%= f.submit 'Search' %>
-  <% end %>
